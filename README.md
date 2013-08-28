@@ -8,6 +8,13 @@ a proxy at say, https://proxy.example.com/hash/key.
 This allows to make sure that your users always view the green lock and never a yellow lock in the browser's address
 bar due to insecure content.
 
+The project is based on the awesome https://github.com/atmos/camo project that Github 
+uses to make its assets look secure. However, we only support the URL format of 
+
+```
+http://server/security-code/base-64-url
+```
+
 Features
 --------
 * Very light weight and fast proxy server
