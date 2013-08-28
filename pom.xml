@@ -1,0 +1,58 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+    	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>com.sangupta</groupId>
+	<artifactId>sslproxy</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<packaging>jar</packaging>
+
+	<name>sslproxy</name>
+	<description>A Java-based SSL reverse proxy to serve non-secure assets securely.</description>
+	<url>http://www.sangupta.com/projects/sslproxy</url>
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+	</properties>
+
+	<dependencies>
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>4.10</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.eclipse.jetty</groupId>
+			<artifactId>jetty-server</artifactId>
+			<version>9.0.5.v20130815</version>
+		</dependency>
+		<dependency>
+			<groupId>com.sangupta</groupId>
+			<artifactId>jerry</artifactId>
+			<version>0.4.1-SNAPSHOT</version>
+		</dependency>
+		<dependency>
+		    <groupId>com.google.guava</groupId>
+		    <artifactId>guava</artifactId>
+		    <version>14.0.1</version>
+		</dependency>
+	</dependencies>
+	
+	<build>
+	    <finalName>sslproxy</finalName>
+	    <plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>2.3.2</version>
+				<configuration>
+					<source>1.6</source>
+					<target>1.6</target>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+	
+</project>
