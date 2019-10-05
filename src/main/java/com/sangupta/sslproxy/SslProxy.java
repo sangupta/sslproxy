@@ -31,6 +31,8 @@ import org.eclipse.jetty.server.SslConnectionFactory;
 import org.eclipse.jetty.util.ssl.SslContextFactory;
 import org.eclipse.jetty.util.thread.QueuedThreadPool;
 
+import com.sangupta.jerry.http.service.impl.DefaultHttpServiceImpl;
+
 /**
  * SslProxy allows to proxy to non-secure assets and serve them over
  * an SSL proxy.
@@ -92,6 +94,7 @@ public class SslProxy {
 		server.setConnectors(new Connector[] { http, https });
 
 		// set the request handler
+		ProxyHandler.HTTP_SERVICE = new DefaultHttpServiceImpl();
         server.setHandler(new ProxyHandler());
   
         // start the server
