@@ -40,8 +40,8 @@ import com.google.common.cache.CacheBuilder;
 import com.google.common.cache.CacheLoader;
 import com.google.common.cache.LoadingCache;
 import com.sangupta.jerry.encoder.Base64Encoder;
-import com.sangupta.jerry.http.WebInvoker;
 import com.sangupta.jerry.http.WebResponse;
+import com.sangupta.jerry.http.service.HttpService;
 import com.sangupta.jerry.util.DateUtils;
 import com.sangupta.jerry.util.ResponseUtils;
 
@@ -74,6 +74,8 @@ public class ProxyHandler extends AbstractHandler {
 			e.printStackTrace();
 		}
 	}
+	
+	public static HttpService HTTP_SERVICE;
 
 	/**
 	 * Cache loader to be used.
@@ -214,7 +216,7 @@ public class ProxyHandler extends AbstractHandler {
 	private static ImageCache proxyRequest(final String url) {
 		// if all well
 		// go ahead and fetch the response from the internet
-		WebResponse webResponse = WebInvoker.getResponse(url);
+		WebResponse webResponse = HTTP_SERVICE.getResponse(url);
 		if(webResponse == null) {
 			return NOT_FOUND;
 		}
